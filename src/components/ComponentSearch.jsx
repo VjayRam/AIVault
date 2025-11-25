@@ -69,7 +69,16 @@ export default function ComponentSearch({ components }) {
   const [query, setQuery] = useState('');
   const [selectedTag, setSelectedTag] = useState('');
   const [selectedAuthor, setSelectedAuthor] = useState('');
+  const [selectedDate, setSelectedDate] = useState('');
   const [selectedComponent, setSelectedComponent] = useState(null);
+
+  const dateOptions = [
+    'Last 24 Hours',
+    'Last 7 Days',
+    'Last 30 Days',
+    'Last 6 Months',
+    'Last 1 Year'
+  ];
 
   const formatText = (text) => {
     if (!text) return '';
@@ -115,8 +124,27 @@ export default function ComponentSearch({ components }) {
       filtered = filtered.filter(c => c.author === selectedAuthor);
     }
 
+    if (selectedDate) {
+      const now = new Date();
+      filtered = filtered.filter(c => {
+        if (!c.lastUpdated) return false;
+        const updated = new Date(c.lastUpdated);
+        const diffTime = Math.abs(now - updated);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+        switch (selectedDate) {
+          case 'Last 24 Hours': return diffDays <= 1;
+          case 'Last 7 Days': return diffDays <= 7;
+          case 'Last 30 Days': return diffDays <= 30;
+          case 'Last 6 Months': return diffDays <= 180;
+          case 'Last 1 Year': return diffDays <= 365;
+          default: return true;
+        }
+      });
+    }
+
     return filtered;
-  }, [query, selectedTag, selectedAuthor, fuse, components]);
+  }, [query, selectedTag, selectedAuthor, selectedDate, fuse, components]);
 
   return (
     <div className="w-full max-w-4xl mx-auto p-4">
@@ -155,6 +183,14 @@ export default function ComponentSearch({ components }) {
             onChange={setSelectedAuthor}
             placeholder="All Authors"
             formatText={formatText}
+          />
+
+          <CustomDropdown
+            options={dateOptions}
+            value={selectedDate}
+            onChange={setSelectedDate}
+            placeholder="Any Time"
+            formatText={(t) => t}
           />
         </div>
       </div>
@@ -216,6 +252,12 @@ export default function ComponentSearch({ components }) {
             </div>
 
             <p className="text-lg text-gray-600 mb-2">By <span className="font-semibold text-gray-800">{formatText(selectedComponent.author) || 'Unknown'}</span></p>
+            {selectedComponent.lastUpdated && (
+                <p className="text-sm text-gray-500 mb-4 flex items-center gap-1">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    Updated on {selectedComponent.lastUpdated}
+                </p>
+            )}
             
             <div className="flex flex-wrap gap-2 mb-6">
               {selectedComponent.tags.map((tag) => (

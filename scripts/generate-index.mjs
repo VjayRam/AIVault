@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import crypto from 'crypto';
+import { execSync } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -54,10 +55,23 @@ function generateIndex() {
         // Normalize path separators for URL
         const urlPath = relativePath.split(path.sep).join('/');
         
+        // Get last updated date from git
+        const componentDir = path.dirname(file);
+        let lastUpdated = '';
+        try {
+            // Check if inside git repo
+            execSync('git rev-parse --is-inside-work-tree', { stdio: 'ignore' });
+            lastUpdated = execSync(`git log -1 --format=%ad --date=short -- "${componentDir}"`, { encoding: 'utf-8' }).trim();
+        } catch (e) {
+            // Fallback to file mtime if git fails
+            lastUpdated = fs.statSync(file).mtime.toISOString().split('T')[0];
+        }
+
         return {
         ...metadata,
         path: urlPath,
-        url: `${GITHUB_REPO_URL}/${urlPath}`
+        url: `${GITHUB_REPO_URL}/${urlPath}`,
+        lastUpdated
         };
     } catch (e) {
         console.error(`Error parsing ${file}:`, e);

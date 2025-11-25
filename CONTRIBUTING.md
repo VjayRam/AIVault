@@ -22,7 +22,15 @@ The core of AIVault is its library of reusable AI components. Adding a new one i
     }
     ```
     *Note: A unique `comp_id` will be automatically assigned to your component when it is processed by our build system. You do not need to add this field manually.*
-5.  **Add Yourself to Contributors**: Open `CONTRIBUTORS.md` and add a new object to the JSON array with your details:
+5.  **Commit Your Changes**: We follow a strict commit message convention to automate versioning.
+    *   **For Component Updates**: Start your commit message with the component ID.
+        *   `comp_xxxxx: feat: added new capability` (Triggers Minor version bump)
+        *   `comp_xxxxx: fix: resolved parsing error` (Triggers Patch version bump)
+        *   `comp_xxxxx: updated documentation` (Triggers Patch version bump)
+    *   **For Website/UI Updates**: Use standard conventional commits.
+        *   `feat: added dark mode`
+        *   `fix: corrected navbar alignment`
+6.  **Add Yourself to Contributors**: Open `CONTRIBUTORS.md` and add a new object to the JSON array with your details:
     ```json
     {
       "name": "Your Name",

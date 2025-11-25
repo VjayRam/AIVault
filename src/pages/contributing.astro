@@ -44,6 +44,25 @@ import '../styles/global.css';
                         <p class="text-sm text-gray-500 mt-2 italic">Note: A unique <code>comp_id</code> will be automatically assigned to your component when it is processed by our build system.</p>
                     </li>
                     <li>
+                        <strong>Commit Your Changes</strong>: We follow a strict commit message convention to automate versioning.
+                        <ul class="list-disc pl-6 mt-2 space-y-1">
+                            <li>
+                                <strong>For Component Updates</strong>: Start your commit message with the component ID.
+                                <ul class="list-disc pl-6 mt-1 text-sm text-gray-600">
+                                    <li><code>comp_xxxxx: feat: added new capability</code> (Triggers Minor version bump)</li>
+                                    <li><code>comp_xxxxx: fix: resolved parsing error</code> (Triggers Patch version bump)</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>For Website/UI Updates</strong>: Use standard conventional commits.
+                                <ul class="list-disc pl-6 mt-1 text-sm text-gray-600">
+                                    <li><code>feat: added dark mode</code></li>
+                                    <li><code>fix: corrected navbar alignment</code></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
                         <strong>Add Yourself to Contributors</strong>: Open <code>CONTRIBUTORS.md</code> and add a new object to the JSON array:
                         <div class="bg-gray-50 p-4 rounded-lg mt-2 border border-gray-200 font-mono text-sm">
 <pre>{`{

@@ -21,7 +21,17 @@ The core of AIVault is its library of reusable AI components. Adding a new one i
       "version": "1.0.0"
     }
     ```
-5.  **Submit a Pull Request**: Push your changes and open a PR to the `main` branch.
+5.  **Add Yourself to Contributors**: Open `CONTRIBUTORS.md` and add a new object to the JSON array with your details:
+    ```json
+    {
+      "name": "Your Name",
+      "role": "Contributor",
+      "email": "your@email.com",
+      "linkedin": "optional-url",
+      "location": "City, Country"
+    }
+    ```
+6.  **Submit a Pull Request**: Push your changes and open a PR to the `main` branch.
 
 ## 💻 Improving the Website
 

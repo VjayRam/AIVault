@@ -1,0 +1,95 @@
+---
+import Navbar from '../components/Navbar.astro';
+import '../styles/global.css';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/ai-vault.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Contributing - AIVault</title>
+	</head>
+	<body class="bg-gray-50 min-h-screen flex flex-col">
+        <Navbar />
+		<main class="container mx-auto py-12 px-4 max-w-3xl flex-grow">
+			<header class="mb-12 text-center">
+                <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Contributing to AIVault</h1>
+                <p class="text-xl text-gray-600">Help us build the best resource for reusable AI components</p>
+            </header>
+            
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 prose prose-blue max-w-none">
+                <p class="lead">
+                    Thank you for your interest in contributing to AIVault! We welcome contributions of all kinds, from adding new AI components to improving the website's code.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">🧩 Adding a New Component</h2>
+                <p>The core of AIVault is its library of reusable AI components. Adding a new one is easy:</p>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li><strong>Fork the Repository</strong>: Create your own fork of the project.</li>
+                    <li><strong>Create a Folder</strong>: Navigate to <code>components_repo/</code> and create a new folder for your component. You can organize it into subfolders (e.g., <code>llm-agents/my-new-agent</code>).</li>
+                    <li><strong>Add Your Code</strong>: Place your component's source code, documentation, and examples in this folder.</li>
+                    <li>
+                        <strong>Add Metadata</strong>: <strong>Crucial Step!</strong> You must create a <code>metadata.json</code> file in your component's root folder. This file tells the website how to display your component.
+                        <div class="bg-gray-50 p-4 rounded-lg mt-2 border border-gray-200 font-mono text-sm">
+<pre>{`{
+  "name": "My New Agent",
+  "description": "A brief description of what this component does.",
+  "tags": ["llm", "agent", "python"],
+  "author": "Your Name or GitHub Handle",
+  "version": "1.0.0"
+}`}</pre>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Add Yourself to Contributors</strong>: Open <code>CONTRIBUTORS.md</code> and add a new object to the JSON array:
+                        <div class="bg-gray-50 p-4 rounded-lg mt-2 border border-gray-200 font-mono text-sm">
+<pre>{`{
+  "name": "Your Name",
+  "role": "Contributor",
+  "email": "your@email.com",
+  "linkedin": "optional-url",
+  "location": "City, Country"
+}`}</pre>
+                        </div>
+                    </li>
+                    <li><strong>Submit a Pull Request</strong>: Push your changes and open a PR to the <code>main</code> branch.</li>
+                </ol>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">💻 Improving the Website</h2>
+                <p>If you want to work on the frontend (Astro/React):</p>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li>
+                        <strong>Install Dependencies</strong>:
+                        <code class="bg-gray-100 px-2 py-1 rounded text-sm">npm install</code>
+                    </li>
+                    <li>
+                        <strong>Run Development Server</strong>:
+                        <code class="bg-gray-100 px-2 py-1 rounded text-sm">npm run dev</code>
+                        <br/>
+                        This will start the server at <code>http://localhost:4321</code>.
+                    </li>
+                    <li><strong>Make Changes</strong>: The source code is in the <code>src/</code> directory.</li>
+                    <li><strong>Test</strong>: Ensure the site builds correctly with <code class="bg-gray-100 px-2 py-1 rounded text-sm">npm run build</code>.</li>
+                </ol>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">🐞 Reporting Issues</h2>
+                <p>If you find a bug or have a feature request, please open an issue on GitHub.</p>
+                
+                <div class="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-100 text-center">
+                    <p class="text-blue-800 font-medium mb-2">Ready to contribute?</p>
+                    <a href="https://github.com/VjayRam/AIVault/" target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 transition-colors">
+                        Go to GitHub Repository
+                    </a>
+                </div>
+            </div>
+		</main>
+        
+        <footer class="bg-white border-t border-gray-100 py-8 mt-12">
+            <div class="container mx-auto px-4 text-center text-gray-400 text-sm">
+                &copy; {new Date().getFullYear()} AIVault. All rights reserved.
+            </div>
+        </footer>
+	</body>
+</html>

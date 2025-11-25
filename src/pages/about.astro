@@ -1,11 +1,30 @@
 ---
 import Navbar from '../components/Navbar.astro';
+import ContributorList from '../components/ContributorList';
+import fs from 'fs';
+import path from 'path';
 import '../styles/global.css';
 
-const contributors = [
-  { name: "Vijay", role: "Lead Developer" },
-  { name: "Community", role: "Open Source Contributors" }
-];
+// Read contributors from CONTRIBUTORS.md
+const contributorsFile = path.join(process.cwd(), 'CONTRIBUTORS.md');
+let contributors = [];
+
+if (fs.existsSync(contributorsFile)) {
+  try {
+    const content = fs.readFileSync(contributorsFile, 'utf-8');
+    const data = JSON.parse(content);
+    
+    contributors = data.map(c => ({
+      name: c.name,
+      role: c.role || 'Contributor',
+      location: c.location || null,
+      email: c.email || null,
+      linkedin: c.linkedin || null
+    }));
+  } catch (e) {
+    console.error("Error parsing CONTRIBUTORS.md:", e);
+  }
+}
 ---
 
 <html lang="en">
@@ -35,19 +54,17 @@ const contributors = [
 
             <section>
                 <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Contributors</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {contributors.map(contributor => (
-                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition-shadow">
-                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-inner">
-                                {contributor.name.charAt(0)}
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-gray-900">{contributor.name}</h3>
-                                <p class="text-sm text-gray-500">{contributor.role}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                <ContributorList client:load contributors={contributors} />
+            </section>
+
+            <section class="mt-16 text-center bg-blue-50 rounded-2xl p-8 border border-blue-100">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Join the Community</h2>
+                <p class="text-gray-600 mb-8 max-w-lg mx-auto">
+                    We are always looking for new components and improvements. Help us build the best AI resource for everyone.
+                </p>
+                <a href="/contributing" class="inline-block px-8 py-3 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 transition-colors shadow-sm hover:shadow-md">
+                    Start Contributing
+                </a>
             </section>
 		</main>
         

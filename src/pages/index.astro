@@ -1,11 +1,29 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import ComponentSearch from '../components/ComponentSearch';
+import components from '../data/components.json';
+import '../styles/global.css';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>ReuseAI - AI Component Directory</title>
+	</head>
+	<body class="bg-gray-50 min-h-screen">
+		<main class="container mx-auto py-12 px-4">
+			<header class="text-center mb-12">
+				<h1 class="text-4xl font-extrabold text-gray-900 mb-4">
+					ReuseAI Directory
+				</h1>
+				<p class="text-xl text-gray-600">
+					Discover and reuse high-quality AI components
+				</p>
+			</header>
+			
+			<ComponentSearch client:load components={components} />
+		</main>
+	</body>
+</html>

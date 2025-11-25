@@ -1,0 +1,7 @@
+{
+  "name": "React Agent",
+  "description": "A simple ReAct agent implementation using LangChain.",
+  "tags": ["llm", "agent", "react", "langchain"],
+  "author": "vijay",
+  "version": "1.0.0"
+}

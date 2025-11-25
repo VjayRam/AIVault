@@ -1,0 +1,7 @@
+{
+  "name": "Multimodal RAG",
+  "description": "RAG system that supports text and images.",
+  "tags": ["rag", "multimodal", "vision"],
+  "author": "vijay",
+  "version": "0.5.0"
+}

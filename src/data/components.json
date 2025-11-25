@@ -14,5 +14,21 @@
     "path": "docling-doc-parser",
     "url": "https://github.com/VjayRam/AIVault/tree/main/components_repo/docling-doc-parser",
     "lastUpdated": "2025-11-25"
+  },
+  {
+    "name": "Pytorch CUDA GPU Setup Scripts",
+    "description": "Scripts to set up Pytorch with CUDA support on GPU-enabled systems",
+    "tags": [
+      "GPU",
+      "Pytorch",
+      "CUDA",
+      "Python"
+    ],
+    "author": "Vijay Ram Enaganti",
+    "version": "v1.0.0",
+    "comp_id": "comp_7e6fc",
+    "path": "pytorch-cuda-gpu-setup",
+    "url": "https://github.com/VjayRam/AIVault/tree/main/components_repo/pytorch-cuda-gpu-setup",
+    "lastUpdated": ""
   }
 ]

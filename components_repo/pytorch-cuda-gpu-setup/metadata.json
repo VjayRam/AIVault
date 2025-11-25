@@ -1,0 +1,13 @@
+{
+  "name": "Pytorch CUDA GPU Setup Scripts",
+  "description": "Scripts to set up Pytorch with CUDA support on GPU-enabled systems",
+  "tags": [
+    "GPU",
+    "Pytorch",
+    "CUDA",
+    "Python"
+  ],
+  "author": "Vijay Ram Enaganti",
+  "version": "v1.0.0",
+  "comp_id": "comp_7e6fc"
+}

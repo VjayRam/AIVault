@@ -1,9 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import logo from '../assets/ai-vault.png';
 ---
 <nav class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
   <div class="container mx-auto px-4 h-16 flex items-center justify-between">
     <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-      <img src="/ai-vault.png" alt="AIVault Logo" class="h-8 w-auto" />
+      <Image src={logo} alt="AIVault Logo" class="h-8 w-auto" />
       <span class="font-bold text-xl text-gray-900 tracking-tight">AIVault</span>
     </a>
     

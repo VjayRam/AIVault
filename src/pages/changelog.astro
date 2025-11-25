@@ -4,7 +4,7 @@ import changelog from '../data/changelog.json';
 import '../styles/global.css';
 
 // Group commits by date
-const groupedChangelog = changelog.reduce((acc, commit) => {
+const groupedChangelog = changelog.reduce((acc: Record<string, typeof changelog>, commit) => {
   if (!acc[commit.date]) {
     acc[commit.date] = [];
   }

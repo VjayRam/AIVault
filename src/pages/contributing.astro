@@ -13,7 +13,7 @@ import '../styles/global.css';
 	</head>
 	<body class="bg-gray-50 min-h-screen flex flex-col">
         <Navbar />
-		<main class="container mx-auto py-12 px-4 max-w-3xl flex-grow">
+		<main class="container mx-auto py-12 px-4 max-w-3xl flex-grow pb-32">
 			<header class="mb-12 text-center">
                 <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Contributing to AIVault</h1>
                 <p class="text-xl text-gray-600">Help us build the best resource for reusable AI components</p>
@@ -89,8 +89,12 @@ import '../styles/global.css';
         
         <footer class="bg-white border-t border-gray-100 py-8 mt-12">
             <div class="container mx-auto px-4 text-center text-gray-400 text-sm">
-                &copy; {new Date().getFullYear()} AIVault. All rights reserved.
+                <p>&copy; {new Date().getFullYear()} AIVault. All rights reserved.</p>
             </div>
         </footer>
+
+        <div class="fixed bottom-6 left-6 z-50 bg-white/90 backdrop-blur-sm border border-gray-200 shadow-lg rounded-full px-6 py-3 text-gray-800 text-sm font-medium hover:shadow-xl transition-all duration-300 flex items-center gap-2 animate-in slide-in-from-bottom-4 fade-in">
+            <span>Made with ❤️ by students and AI enthusiasts</span>
+        </div>
 	</body>
 </html>

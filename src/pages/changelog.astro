@@ -27,7 +27,7 @@ const sortedDates = Object.keys(groupedChangelog).sort((a, b) => new Date(b).get
         <Navbar />
 		<main class="container mx-auto py-12 px-4 max-w-4xl flex-grow">
 			<header class="mb-12 text-center">
-                <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Components Changelog</h1>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Components Changelog</h1>
                 <p class="text-gray-600">Latest updates to the component library</p>
             </header>
             
@@ -84,10 +84,6 @@ const sortedDates = Object.keys(groupedChangelog).sort((a, b) => new Date(b).get
             </div>
 		</main>
         
-        <footer class="bg-white border-t border-gray-100 py-8 mt-12">
-            <div class="container mx-auto px-4 text-center text-gray-400 text-sm">
-                &copy; {new Date().getFullYear()} AIVault. All rights reserved.
-            </div>
-        </footer>
-	</body>
-</html>
+        <div class="fixed bottom-6 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 z-50 bg-white/90 backdrop-blur-sm border border-gray-200 shadow-lg rounded-full px-4 py-2 md:px-6 md:py-3 text-gray-800 text-xs md:text-sm font-medium hover:shadow-xl transition-all duration-300 flex items-center gap-2 animate-in slide-in-from-bottom-4 fade-in whitespace-nowrap">
+            <span>Made with ❤️ by Students and AI Enthusiasts</span>
+        </div>

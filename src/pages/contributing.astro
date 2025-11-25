@@ -15,8 +15,8 @@ import '../styles/global.css';
         <Navbar />
 		<main class="container mx-auto py-12 px-4 max-w-3xl flex-grow pb-32">
 			<header class="mb-12 text-center">
-                <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Contributing to AIVault</h1>
-                <p class="text-xl text-gray-600">Help us build the best resource for reusable AI components</p>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Contributing to AIVault</h1>
+                <p class="text-lg md:text-xl text-gray-600">Help us build the best resource for reusable AI components</p>
             </header>
             
             <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 prose prose-blue max-w-none">
@@ -32,7 +32,7 @@ import '../styles/global.css';
                     <li><strong>Add Your Code</strong>: Place your component's source code, documentation, and examples in this folder.</li>
                     <li>
                         <strong>Add Metadata</strong>: <strong>Crucial Step!</strong> You must create a <code>metadata.json</code> file in your component's root folder. This file tells the website how to display your component.
-                        <div class="bg-gray-50 p-4 rounded-lg mt-2 border border-gray-200 font-mono text-sm">
+                        <div class="bg-gray-50 p-4 rounded-lg mt-2 border border-gray-200 font-mono text-sm overflow-x-auto">
 <pre>{`{
   "name": "My New Agent",
   "description": "A brief description of what this component does.",
@@ -64,7 +64,7 @@ import '../styles/global.css';
                     </li>
                     <li>
                         <strong>Add Yourself to Contributors</strong>: Open <code>CONTRIBUTORS.md</code> and add a new object to the JSON array:
-                        <div class="bg-gray-50 p-4 rounded-lg mt-2 border border-gray-200 font-mono text-sm">
+                        <div class="bg-gray-50 p-4 rounded-lg mt-2 border border-gray-200 font-mono text-sm overflow-x-auto">
 <pre>{`{
   "name": "Your Name",
   "role": "Contributor",
@@ -112,8 +112,8 @@ import '../styles/global.css';
             </div>
         </footer>
 
-        <div class="fixed bottom-6 left-6 z-50 bg-white/90 backdrop-blur-sm border border-gray-200 shadow-lg rounded-full px-6 py-3 text-gray-800 text-sm font-medium hover:shadow-xl transition-all duration-300 flex items-center gap-2 animate-in slide-in-from-bottom-4 fade-in">
-            <span>Made with ❤️ by students and AI enthusiasts</span>
+        <div class="fixed bottom-6 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 z-50 bg-white/90 backdrop-blur-sm border border-gray-200 shadow-lg rounded-full px-6 py-3 text-gray-800 text-sm font-medium hover:shadow-xl transition-all duration-300 flex items-center gap-2 animate-in slide-in-from-bottom-4 fade-in whitespace-nowrap">
+            <span>Made with ❤️ by Students and AI Enthusiasts</span>
         </div>
 	</body>
 </html>

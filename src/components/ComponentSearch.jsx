@@ -151,7 +151,7 @@ export default function ComponentSearch({ components }) {
       <div className="mb-8 space-y-4">
         <form 
           onSubmit={(e) => { e.preventDefault(); setQuery(searchInput); }} 
-          className="flex gap-2"
+          className="flex flex-col sm:flex-row gap-2"
         >
           <input
             type="text"
@@ -162,13 +162,13 @@ export default function ComponentSearch({ components }) {
           />
           <button
             type="submit"
-            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-full shadow-sm hover:from-blue-700 hover:to-indigo-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all"
+            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-full shadow-sm hover:from-blue-700 hover:to-indigo-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all w-full sm:w-auto"
           >
             Search
           </button>
         </form>
         
-        <div className="flex gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           <CustomDropdown
             options={uniqueTags}
             value={selectedTag}
@@ -234,7 +234,7 @@ export default function ComponentSearch({ components }) {
 
       {selectedComponent && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setSelectedComponent(null)}>
-          <div className="bg-white rounded-2xl p-8 max-w-2xl w-full shadow-2xl relative" onClick={e => e.stopPropagation()}>
+          <div className="bg-white rounded-2xl p-6 md:p-8 max-w-2xl w-full shadow-2xl relative max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
             <button 
                 onClick={() => setSelectedComponent(null)}
                 className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
@@ -242,10 +242,10 @@ export default function ComponentSearch({ components }) {
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
             </button>
             
-            <div className="flex justify-between items-start mb-4">
-                <h2 className="text-3xl font-bold text-gray-900">{selectedComponent.name}</h2>
+            <div className="flex justify-between items-start mb-4 pr-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 break-words">{selectedComponent.name}</h2>
                  {selectedComponent.comp_id && (
-                    <span className="text-sm text-gray-500 font-mono bg-gray-100 px-3 py-1 rounded-full">
+                    <span className="text-sm text-gray-500 font-mono bg-gray-100 px-3 py-1 rounded-full whitespace-nowrap ml-2">
                       {selectedComponent.comp_id}
                     </span>
                   )}
@@ -269,10 +269,10 @@ export default function ComponentSearch({ components }) {
 
             <p className="text-gray-700 mb-8 leading-relaxed">{selectedComponent.description}</p>
 
-            <div className="flex justify-end gap-4">
+            <div className="flex flex-col sm:flex-row justify-end gap-4">
                 <button 
                     onClick={() => setSelectedComponent(null)}
-                    className="px-6 py-2 text-gray-600 hover:text-gray-800 font-medium"
+                    className="px-6 py-2 text-gray-600 hover:text-gray-800 font-medium w-full sm:w-auto text-center"
                 >
                     Close
                 </button>
@@ -280,7 +280,7 @@ export default function ComponentSearch({ components }) {
                     href={selectedComponent.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors font-medium flex items-center gap-2"
+                    className="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors font-medium flex items-center justify-center gap-2 w-full sm:w-auto"
                 >
                     <span>View on GitHub</span>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>

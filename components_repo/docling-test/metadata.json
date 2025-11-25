@@ -1,5 +1,5 @@
 {
-  "name": "Docling Test Component",
+  "name": "Docling Document Parser Component",
   "description": "A docling document parsing component",
   "tags": ["ocr", "document-parsing", "data-ingestion", "markdown"],
   "author": "Vijay Ram Enaganti",

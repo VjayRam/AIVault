@@ -1,5 +1,31 @@
 [
   {
+    "hash": "a0de55673518b807a316e04f83661964c74755b2",
+    "author": "VjayRam",
+    "date": "2025-11-25",
+    "message": "feat: update metadata for Docling Test Component, remove React Agent and Multimodal RAG components",
+    "components": [
+      {
+        "path": "docling-test/metadata.json",
+        "name": "metadata.json",
+        "version": null,
+        "componentAuthor": null
+      },
+      {
+        "path": "llm-agents/react-agent",
+        "name": "react-agent",
+        "version": null,
+        "componentAuthor": null
+      },
+      {
+        "path": "rag-systems/multimodal-rag",
+        "name": "multimodal-rag",
+        "version": null,
+        "componentAuthor": null
+      }
+    ]
+  },
+  {
     "hash": "25865798c927512feca2e00860819964a4614768",
     "author": "VjayRam",
     "date": "2025-11-25",
@@ -21,15 +47,15 @@
     "components": [
       {
         "path": "llm-agents/react-agent",
-        "name": "React Agent",
-        "version": "1.0.0",
-        "componentAuthor": "vijay"
+        "name": "react-agent",
+        "version": null,
+        "componentAuthor": null
       },
       {
         "path": "rag-systems/multimodal-rag",
-        "name": "Multimodal RAG",
-        "version": "0.5.0",
-        "componentAuthor": "vijay"
+        "name": "multimodal-rag",
+        "version": null,
+        "componentAuthor": null
       }
     ]
   }

@@ -8,36 +8,9 @@
       "data-ingestion",
       "markdown"
     ],
-    "author": "vijay",
-    "version": "0.0.1",
+    "author": "Vijay Ram Enaganti",
+    "version": "v1.0.0",
     "path": "docling-test",
-    "url": "https://github.com/VjayRam/ReuseAI/tree/main/components_repo/docling-test"
-  },
-  {
-    "name": "React Agent",
-    "description": "A simple ReAct agent implementation using LangChain.",
-    "tags": [
-      "llm",
-      "agent",
-      "react",
-      "langchain"
-    ],
-    "author": "vijay",
-    "version": "1.0.0",
-    "path": "llm-agents/react-agent",
-    "url": "https://github.com/VjayRam/ReuseAI/tree/main/components_repo/llm-agents/react-agent"
-  },
-  {
-    "name": "Multimodal RAG",
-    "description": "RAG system that supports text and images.",
-    "tags": [
-      "rag",
-      "multimodal",
-      "vision"
-    ],
-    "author": "vijay",
-    "version": "0.5.0",
-    "path": "rag-systems/multimodal-rag",
-    "url": "https://github.com/VjayRam/ReuseAI/tree/main/components_repo/rag-systems/multimodal-rag"
+    "url": "https://github.com/VjayRam/AIVault/tree/main/components_repo/docling-test"
   }
 ]

@@ -1,0 +1,36 @@
+[
+  {
+    "hash": "25865798c927512feca2e00860819964a4614768",
+    "author": "VjayRam",
+    "date": "2025-11-25",
+    "message": "feat: enhance component search functionality and improve project setup",
+    "components": [
+      {
+        "path": "docling-test/metadata.json",
+        "name": "metadata.json",
+        "version": null,
+        "componentAuthor": null
+      }
+    ]
+  },
+  {
+    "hash": "9a8ea491c10368754e1abacb475a70a9b66cb390",
+    "author": "VjayRam",
+    "date": "2025-11-24",
+    "message": "feat: add component search functionality and index generation",
+    "components": [
+      {
+        "path": "llm-agents/react-agent",
+        "name": "React Agent",
+        "version": "1.0.0",
+        "componentAuthor": "vijay"
+      },
+      {
+        "path": "rag-systems/multimodal-rag",
+        "name": "Multimodal RAG",
+        "version": "0.5.0",
+        "componentAuthor": "vijay"
+      }
+    ]
+  }
+]

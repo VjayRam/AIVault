@@ -3,8 +3,8 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "node scripts/generate-index.mjs && astro dev",
-    "build": "node scripts/generate-index.mjs && astro build",
+    "dev": "node scripts/generate-index.mjs && node scripts/generate-changelog.mjs && astro dev",
+    "build": "node scripts/generate-index.mjs && node scripts/generate-changelog.mjs && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },

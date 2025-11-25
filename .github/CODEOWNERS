@@ -1,0 +1,14 @@
+# This file defines who owns which parts of the codebase.
+# Code owners are automatically requested for review when someone opens a pull request.
+
+# Global owner (default for everything)
+* @VjayRam
+
+# Components Repository - Critical for the library
+/components_repo/ @VjayRam
+
+# Scripts - Critical for automation
+/scripts/ @VjayRam
+
+# GitHub Workflows - Critical for CI/CD
+/.github/ @VjayRam

@@ -1,5 +1,68 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import Fuse from 'fuse.js';
+
+function CustomDropdown({ options, value, onChange, placeholder, formatText }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [dropdownRef]);
+
+  return (
+    <div className="relative flex-1" ref={dropdownRef}>
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full p-3 px-6 rounded-full border border-gray-300 shadow-sm hover:border-blue-400 focus:ring-2 focus:ring-blue-500 outline-none bg-white text-left flex justify-between items-center transition-all"
+      >
+        <span className={`block truncate ${value ? 'text-gray-900 font-medium' : 'text-gray-500'}`}>
+          {value ? formatText(value) : placeholder}
+        </span>
+        <svg 
+            className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      {isOpen && (
+        <div className="absolute z-20 w-full mt-2 bg-white rounded-2xl shadow-xl border border-gray-100 max-h-60 overflow-y-auto py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div
+            className={`px-6 py-2.5 cursor-pointer hover:bg-blue-50 transition-colors ${value === '' ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-700'}`}
+            onClick={() => {
+              onChange('');
+              setIsOpen(false);
+            }}
+          >
+            {placeholder}
+          </div>
+          {options.map((option) => (
+            <div
+              key={option}
+              className={`px-6 py-2.5 cursor-pointer hover:bg-blue-50 transition-colors ${value === option ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-700'}`}
+              onClick={() => {
+                onChange(option);
+                setIsOpen(false);
+              }}
+            >
+              {formatText(option)}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function ComponentSearch({ components }) {
   const [searchInput, setSearchInput] = useState('');
@@ -78,27 +141,21 @@ export default function ComponentSearch({ components }) {
         </form>
         
         <div className="flex gap-4">
-          <select
-            className="flex-1 p-3 px-6 rounded-full border border-gray-300 shadow-sm focus:ring-2 focus:ring-blue-500 outline-none bg-white"
+          <CustomDropdown
+            options={uniqueTags}
             value={selectedTag}
-            onChange={(e) => setSelectedTag(e.target.value)}
-          >
-            <option value="">All Tags</option>
-            {uniqueTags.map(tag => (
-              <option key={tag} value={tag}>{formatText(tag)}</option>
-            ))}
-          </select>
+            onChange={setSelectedTag}
+            placeholder="All Tags"
+            formatText={formatText}
+          />
 
-          <select
-            className="flex-1 p-3 px-6 rounded-full border border-gray-300 shadow-sm focus:ring-2 focus:ring-blue-500 outline-none bg-white"
+          <CustomDropdown
+            options={uniqueAuthors}
             value={selectedAuthor}
-            onChange={(e) => setSelectedAuthor(e.target.value)}
-          >
-            <option value="">All Authors</option>
-            {uniqueAuthors.map(author => (
-              <option key={author} value={author}>{formatText(author)}</option>
-            ))}
-          </select>
+            onChange={setSelectedAuthor}
+            placeholder="All Authors"
+            formatText={formatText}
+          />
         </div>
       </div>
 

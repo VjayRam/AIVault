@@ -1,5 +1,91 @@
 [
   {
+    "hash": "03ecad12f4a99aae1e661d4b1b60053f90c00252",
+    "author": "VjayRam",
+    "date": "2025-11-25",
+    "message": "feat: add README for Docling Document Parser with usage examples and metadata",
+    "components": [
+      {
+        "path": "docling-doc-parser/README.md",
+        "name": "README.md",
+        "version": null,
+        "componentAuthor": null
+      }
+    ]
+  },
+  {
+    "hash": "f65d7613a2d73d897dac492aab46af803f5d95a5",
+    "author": "VjayRam",
+    "date": "2025-11-25",
+    "message": "feat: enhance contributing guidelines and metadata handling, assign unique comp_id automatically",
+    "components": [
+      {
+        "path": "docling-doc-parser/metadata.json",
+        "name": "metadata.json",
+        "version": null,
+        "componentAuthor": null
+      }
+    ]
+  },
+  {
+    "hash": "558866f59111ab1e89559da9a92f09ac169899d9",
+    "author": "VjayRam",
+    "date": "2025-11-25",
+    "message": "add-comp: Added necessary files for docling document parser with example files and example output",
+    "components": [
+      {
+        "path": "docling-doc-parser/ReqView-SRS.pdf",
+        "name": "ReqView-SRS.pdf",
+        "version": null,
+        "componentAuthor": null
+      },
+      {
+        "path": "docling-doc-parser/docling.ipynb",
+        "name": "docling.ipynb",
+        "version": null,
+        "componentAuthor": null
+      },
+      {
+        "path": "docling-doc-parser/document.md",
+        "name": "document.md",
+        "version": null,
+        "componentAuthor": null
+      },
+      {
+        "path": "docling-doc-parser/metadata.json",
+        "name": "metadata.json",
+        "version": null,
+        "componentAuthor": null
+      },
+      {
+        "path": "docling-doc-parser/requirements.txt",
+        "name": "requirements.txt",
+        "version": null,
+        "componentAuthor": null
+      },
+      {
+        "path": "docling-doc-parser/srs_example.pdf",
+        "name": "srs_example.pdf",
+        "version": null,
+        "componentAuthor": null
+      }
+    ]
+  },
+  {
+    "hash": "1d23260c06c5685b0610c98f1f525708eacf93b9",
+    "author": "VjayRam",
+    "date": "2025-11-25",
+    "message": "feat: update component name to 'Docling Document Parser Component'",
+    "components": [
+      {
+        "path": "docling-test/metadata.json",
+        "name": "metadata.json",
+        "version": null,
+        "componentAuthor": null
+      }
+    ]
+  },
+  {
     "hash": "a0de55673518b807a316e04f83661964c74755b2",
     "author": "VjayRam",
     "date": "2025-11-25",

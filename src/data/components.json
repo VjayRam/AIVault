@@ -1,6 +1,6 @@
 [
   {
-    "name": "Docling Test Component",
+    "name": "Docling Document Parser",
     "description": "A docling document parsing component",
     "tags": [
       "ocr",
@@ -10,7 +10,8 @@
     ],
     "author": "Vijay Ram Enaganti",
     "version": "v1.0.0",
-    "path": "docling-test",
-    "url": "https://github.com/VjayRam/AIVault/tree/main/components_repo/docling-test"
+    "comp_id": "comp_ecc50",
+    "path": "docling-doc-parser",
+    "url": "https://github.com/VjayRam/AIVault/tree/main/components_repo/docling-doc-parser"
   }
 ]

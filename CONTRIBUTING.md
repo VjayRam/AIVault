@@ -21,6 +21,7 @@ The core of AIVault is its library of reusable AI components. Adding a new one i
       "version": "1.0.0"
     }
     ```
+    *Note: A unique `comp_id` will be automatically assigned to your component when it is processed by our build system. You do not need to add this field manually.*
 5.  **Add Yourself to Contributors**: Open `CONTRIBUTORS.md` and add a new object to the JSON array with your details:
     ```json
     {

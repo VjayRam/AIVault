@@ -31,7 +31,7 @@ export default function ComponentSearch({ components }) {
 
   const fuse = useMemo(() => {
     return new Fuse(components, {
-      keys: ['name', 'description', 'tags', 'author'],
+      keys: ['name', 'description', 'tags', 'author', 'comp_id'],
       threshold: 0.3,
     });
   }, [components]);
@@ -110,7 +110,14 @@ export default function ComponentSearch({ components }) {
             rel="noopener noreferrer"
             className="block p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100"
           >
-            <h3 className="text-xl font-bold text-gray-900 mb-2">{component.name}</h3>
+            <div className="flex justify-between items-start mb-2">
+              <h3 className="text-xl font-bold text-gray-900">{component.name}</h3>
+              {component.comp_id && (
+                <span className="text-xs text-gray-400 font-mono bg-gray-50 px-2 py-1 rounded" title="Component ID">
+                  {component.comp_id}
+                </span>
+              )}
+            </div>
             <p className="text-sm text-gray-500 mb-2">By {formatText(component.author) || 'Unknown'}</p>
             <p className="text-gray-600 mb-4">{component.description}</p>
             <div className="flex flex-wrap gap-2">

@@ -1,7 +1,13 @@
 {
   "name": "Docling Document Parser",
   "description": "A docling document parsing component",
-  "tags": ["ocr", "document-parsing", "data-ingestion", "markdown"],
+  "tags": [
+    "ocr",
+    "document-parsing",
+    "data-ingestion",
+    "markdown"
+  ],
   "author": "Vijay Ram Enaganti",
-  "version": "v1.0.0"
+  "version": "v1.0.0",
+  "comp_id": "comp_ecc50"
 }

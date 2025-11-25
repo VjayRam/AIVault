@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import crypto from 'crypto';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -31,7 +32,22 @@ function generateIndex() {
   const components = metadataFiles.map((file) => {
     const content = fs.readFileSync(file, 'utf-8');
     try {
-        const metadata = JSON.parse(content);
+        let metadata = JSON.parse(content);
+        let modified = false;
+
+        // Assign unique component ID if missing
+        if (!metadata.comp_id) {
+            // Generate a short 5-character hex ID
+            const shortId = crypto.randomBytes(3).toString('hex').slice(0, 5);
+            metadata.comp_id = `comp_${shortId}`;
+            modified = true;
+        }
+
+        // Write back to file if modified
+        if (modified) {
+            fs.writeFileSync(file, JSON.stringify(metadata, null, 2));
+            console.log(`Assigned comp_id to ${path.basename(path.dirname(file))}`);
+        }
         
         // Calculate relative path from REPO_ROOT
         const relativePath = path.relative(REPO_ROOT, path.dirname(file));

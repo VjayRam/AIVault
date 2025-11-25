@@ -1,5 +1,19 @@
 [
   {
+    "name": "Docling Test Component",
+    "description": "A docling document parsing component",
+    "tags": [
+      "ocr",
+      "document-parsing",
+      "data-ingestion",
+      "markdown"
+    ],
+    "author": "vijay",
+    "version": "0.0.1",
+    "path": "docling-test",
+    "url": "https://github.com/VjayRam/ReuseAI/tree/main/components_repo/docling-test"
+  },
+  {
     "name": "React Agent",
     "description": "A simple ReAct agent implementation using LangChain.",
     "tags": [
@@ -11,7 +25,7 @@
     "author": "vijay",
     "version": "1.0.0",
     "path": "llm-agents/react-agent",
-    "url": "https://github.com/your-username/your-repo/tree/main/components_repo/llm-agents/react-agent"
+    "url": "https://github.com/VjayRam/ReuseAI/tree/main/components_repo/llm-agents/react-agent"
   },
   {
     "name": "Multimodal RAG",
@@ -24,6 +38,6 @@
     "author": "vijay",
     "version": "0.5.0",
     "path": "rag-systems/multimodal-rag",
-    "url": "https://github.com/your-username/your-repo/tree/main/components_repo/rag-systems/multimodal-rag"
+    "url": "https://github.com/VjayRam/ReuseAI/tree/main/components_repo/rag-systems/multimodal-rag"
   }
 ]

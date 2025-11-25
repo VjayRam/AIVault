@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 const REPO_ROOT = path.join(__dirname, '../components_repo');
 const OUTPUT_FILE = path.join(__dirname, '../src/data/components.json');
 // TODO: Replace with your actual GitHub repository URL
-const GITHUB_REPO_URL = 'https://github.com/your-username/your-repo/tree/main/components_repo'; 
+const GITHUB_REPO_URL = 'https://github.com/VjayRam/ReuseAI/tree/main/components_repo'; 
 
 function getFiles(dir) {
   const subdirs = fs.readdirSync(dir);

@@ -7,6 +7,14 @@ export default function ComponentSearch({ components }) {
   const [selectedTag, setSelectedTag] = useState('');
   const [selectedAuthor, setSelectedAuthor] = useState('');
 
+  const formatText = (text) => {
+    if (!text) return '';
+    return text
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
+
   const uniqueTags = useMemo(() => {
     const tags = new Set();
     components.forEach(c => c.tags?.forEach(t => tags.add(t)));
@@ -76,7 +84,7 @@ export default function ComponentSearch({ components }) {
           >
             <option value="">All Tags</option>
             {uniqueTags.map(tag => (
-              <option key={tag} value={tag}>{tag}</option>
+              <option key={tag} value={tag}>{formatText(tag)}</option>
             ))}
           </select>
 
@@ -87,7 +95,7 @@ export default function ComponentSearch({ components }) {
           >
             <option value="">All Authors</option>
             {uniqueAuthors.map(author => (
-              <option key={author} value={author}>{author}</option>
+              <option key={author} value={author}>{formatText(author)}</option>
             ))}
           </select>
         </div>
@@ -103,7 +111,7 @@ export default function ComponentSearch({ components }) {
             className="block p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100"
           >
             <h3 className="text-xl font-bold text-gray-900 mb-2">{component.name}</h3>
-            <p className="text-sm text-gray-500 mb-2">By {component.author || 'Unknown'}</p>
+            <p className="text-sm text-gray-500 mb-2">By {formatText(component.author) || 'Unknown'}</p>
             <p className="text-gray-600 mb-4">{component.description}</p>
             <div className="flex flex-wrap gap-2">
               {component.tags.map((tag) => (
@@ -111,7 +119,7 @@ export default function ComponentSearch({ components }) {
                   key={tag}
                   className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
                 >
-                  {tag}
+                  {formatText(tag)}
                 </span>
               ))}
             </div>

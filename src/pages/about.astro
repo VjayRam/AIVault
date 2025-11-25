@@ -1,0 +1,60 @@
+---
+import Navbar from '../components/Navbar.astro';
+import '../styles/global.css';
+
+const contributors = [
+  { name: "Vijay", role: "Lead Developer" },
+  { name: "Community", role: "Open Source Contributors" }
+];
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/ai-vault.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>About - AIVault</title>
+	</head>
+	<body class="bg-gray-50 min-h-screen flex flex-col">
+        <Navbar />
+		<main class="container mx-auto py-12 px-4 max-w-3xl flex-grow">
+			<header class="mb-12 text-center">
+                <h1 class="text-4xl font-extrabold text-gray-900 mb-4">About AIVault</h1>
+                <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+            </header>
+            
+            <section class="prose prose-lg mb-16 text-gray-600 mx-auto">
+                <p class="mb-6 leading-relaxed">
+                    <strong class="text-gray-900">AIVault</strong> is a centralized repository for reusable AI components, designed to streamline the development of intelligent applications.
+                </p>
+                <p class="leading-relaxed">
+                    Our goal is to provide developers with high-quality, tested building blocks—from LLM agents to RAG systems—that can be easily integrated into new projects. By fostering a community of sharing and reuse, we aim to accelerate innovation in the AI space and reduce the redundancy of rebuilding common AI patterns.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Contributors</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {contributors.map(contributor => (
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-inner">
+                                {contributor.name.charAt(0)}
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900">{contributor.name}</h3>
+                                <p class="text-sm text-gray-500">{contributor.role}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+		</main>
+        
+        <footer class="bg-white border-t border-gray-100 py-8 mt-12">
+            <div class="container mx-auto px-4 text-center text-gray-400 text-sm">
+                &copy; {new Date().getFullYear()} AIVault. All rights reserved.
+            </div>
+        </footer>
+	</body>
+</html>

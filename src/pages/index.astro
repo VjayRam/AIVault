@@ -1,5 +1,6 @@
 ---
 import ComponentSearch from '../components/ComponentSearch';
+import Navbar from '../components/Navbar.astro';
 import components from '../data/components.json';
 import '../styles/global.css';
 ---
@@ -7,16 +8,17 @@ import '../styles/global.css';
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/ai-vault.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>ReuseAI - AI Component Directory</title>
+		<title>AIVault - AI Component Directory</title>
 	</head>
-	<body class="bg-gray-50 min-h-screen">
-		<main class="container mx-auto py-12 px-4">
+	<body class="bg-gray-50 min-h-screen flex flex-col">
+		<Navbar />
+		<main class="container mx-auto py-12 px-4 flex-grow">
 			<header class="text-center mb-12">
 				<h1 class="text-4xl font-extrabold text-gray-900 mb-4">
-					ReuseAI Directory
+					AIVault Directory
 				</h1>
 				<p class="text-xl text-gray-600">
 					Discover and reuse high-quality AI components. Built by students for everyone.
@@ -25,5 +27,11 @@ import '../styles/global.css';
 			
 			<ComponentSearch client:load components={components} />
 		</main>
+		
+		<footer class="bg-white border-t border-gray-100 py-8 mt-12">
+            <div class="container mx-auto px-4 text-center text-gray-400 text-sm">
+                &copy; {new Date().getFullYear()} AIVault. All rights reserved.
+            </div>
+        </footer>
 	</body>
 </html>

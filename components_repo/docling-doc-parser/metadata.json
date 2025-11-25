@@ -2,7 +2,7 @@
   "name": "Docling Document Parser",
   "description": "A docling document parsing component",
   "tags": [
-    "ocr",
+    "OCR",
     "document-parsing",
     "data-ingestion",
     "markdown"

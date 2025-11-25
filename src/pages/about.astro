@@ -14,7 +14,7 @@ if (fs.existsSync(contributorsFile)) {
     const content = fs.readFileSync(contributorsFile, 'utf-8');
     const data = JSON.parse(content);
     
-    contributors = data.map(c => ({
+    contributors = data.map((c: any) => ({
       name: c.name,
       role: c.role || 'Contributor',
       location: c.location || null,

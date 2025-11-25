@@ -1,5 +1,45 @@
 [
   {
+    "hash": "a7a5c2f6b0ce20c9632b08afa6c244fd0c270b34",
+    "author": "VjayRam",
+    "date": "2025-11-25",
+    "message": "comp_ecc50: Tag update",
+    "components": [
+      {
+        "path": "docling-doc-parser/metadata.json",
+        "name": "metadata.json",
+        "version": null,
+        "componentAuthor": null
+      }
+    ]
+  },
+  {
+    "hash": "397d1ab716befb6d084cdb3e5005632184c12fc4",
+    "author": "VjayRam",
+    "date": "2025-11-25",
+    "message": "comp_7e6fc: add Pytorch CUDA GPU setup component with README, metadata, and setup notebook",
+    "components": [
+      {
+        "path": "pytorch-cuda-gpu-setup/README.md",
+        "name": "README.md",
+        "version": null,
+        "componentAuthor": null
+      },
+      {
+        "path": "pytorch-cuda-gpu-setup/metadata.json",
+        "name": "metadata.json",
+        "version": null,
+        "componentAuthor": null
+      },
+      {
+        "path": "pytorch-cuda-gpu-setup/setup.ipynb",
+        "name": "setup.ipynb",
+        "version": null,
+        "componentAuthor": null
+      }
+    ]
+  },
+  {
     "hash": "03ecad12f4a99aae1e661d4b1b60053f90c00252",
     "author": "VjayRam",
     "date": "2025-11-25",

@@ -3,7 +3,7 @@
     "name": "Docling Document Parser",
     "description": "A docling document parsing component",
     "tags": [
-      "ocr",
+      "OCR",
       "document-parsing",
       "data-ingestion",
       "markdown"
@@ -29,6 +29,6 @@
     "comp_id": "comp_7e6fc",
     "path": "pytorch-cuda-gpu-setup",
     "url": "https://github.com/VjayRam/AIVault/tree/main/components_repo/pytorch-cuda-gpu-setup",
-    "lastUpdated": ""
+    "lastUpdated": "2025-11-25"
   }
 ]

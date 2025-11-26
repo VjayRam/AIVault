@@ -2,6 +2,7 @@
 import ComponentSearch from '../components/ComponentSearch';
 import Navbar from '../components/Navbar.astro';
 import components from '../data/components.json';
+import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 ---
 
@@ -12,6 +13,18 @@ import '../styles/global.css';
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>AIVault - AI Component Directory</title>
+		<ClientRouter />
+		<script is:inline>
+			function applyTheme() {
+				if (localStorage.getItem('theme') === 'dark') {
+					document.documentElement.classList.add('dark');
+				} else {
+					document.documentElement.classList.remove('dark');
+				}
+			}
+			applyTheme();
+			document.addEventListener('astro:after-swap', applyTheme);
+		</script>
 	</head>
 	<body class="bg-white dark:bg-[#1F1F21] min-h-screen flex flex-col transition-colors duration-300">
 		<Navbar />

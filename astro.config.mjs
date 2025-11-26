@@ -13,5 +13,9 @@ export default defineConfig({
   },
 
   integrations: [react()],
-  adapter: vercel()
+  adapter: vercel(),
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'viewport'
+  }
 });

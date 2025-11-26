@@ -35,46 +35,46 @@ if (fs.existsSync(contributorsFile)) {
 		<meta name="generator" content={Astro.generator} />
 		<title>About - AIVault</title>
 	</head>
-	<body class="bg-gray-50 min-h-screen flex flex-col">
+	<body class="bg-white dark:bg-[#1F1F21] min-h-screen flex flex-col transition-colors duration-300">
         <Navbar />
 		<main class="container mx-auto py-12 px-4 max-w-3xl flex-grow">
 			<header class="mb-12 text-center">
-                <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">About AIVault</h1>
-                <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-[#1F1F21] dark:text-[#FE3203] mb-4">About AIVault</h1>
+                <div class="w-24 h-1 bg-[#FE3203] mx-auto rounded-full"></div>
             </header>
             
-            <section class="prose prose-lg mb-16 text-gray-600 mx-auto text-justify">
+            <section class="prose prose-lg mb-16 text-gray-600 dark:text-white mx-auto text-justify">
                 <p class="mb-6 leading-relaxed">
-                    <strong class="text-gray-900">AIVault</strong> is a centralized repository for reusable AI components, designed to streamline the development of intelligent applications.
+                    <strong class="text-[#1F1F21] dark:text-white">AIVault</strong> is a centralized repository for reusable AI components, designed to streamline the development of intelligent applications.
                 </p>
                 <p class="leading-relaxed">
                     Our goal is to provide developers, students, educators, and enthusiasts with high-quality, tested building blocks—from LLM agents to RAG systems or even smaller AI modules—that can be easily integrated into new projects. By fostering a community of sharing and reuse, we aim to accelerate innovation in the AI space and reduce the redundancy of rebuilding common AI patterns.
                 </p>
             </section>
 
-            <section class="mb-16 text-center bg-blue-50 rounded-2xl p-8 border border-blue-100">
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Join the Community</h2>
-                <p class="text-gray-600 mb-8 max-w-lg mx-auto">
+            <section class="mb-16 text-center bg-orange-100 dark:bg-[#2A2A2D] rounded-2xl p-8 border border-orange-300 dark:border-[#FE3203]">
+                <h2 class="text-2xl font-bold text-[#1F1F21] dark:text-[#FE3203] mb-4">Join the Community</h2>
+                <p class="text-gray-600 dark:text-white mb-8 max-w-lg mx-auto">
                     We are always looking for new components and improvements. Help us build the best AI resource for everyone.
                 </p>
-                <a href="/contributing" class="inline-block px-8 py-3 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 transition-colors shadow-sm hover:shadow-md">
+                <a href="/contributing" class="inline-block px-8 py-3 bg-[#FE3203] text-white font-bold rounded-full hover:bg-[#D92B02] transition-colors shadow-sm hover:shadow-md">
                     Start Contributing
                 </a>
             </section>
 
             <section>
-                <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Contributors</h2>
+                <h2 class="text-2xl font-bold text-[#1F1F21] dark:text-[#FE3203] mb-8 text-center">Contributors</h2>
                 <ContributorList client:load contributors={contributors} />
             </section>
 		</main>
         
-        <footer class="bg-white border-t border-gray-100 py-8 mt-12">
-            <div class="container mx-auto px-4 text-center text-gray-400 text-sm">
+        <footer class="bg-white dark:bg-[#1F1F21] border-t border-gray-100 dark:border-[#FE3203] py-8 mt-12 transition-colors duration-300">
+            <div class="container mx-auto px-4 text-center text-gray-400 dark:text-white text-sm">
                 <p>&copy; {new Date().getFullYear()} AIVault. All rights reserved.</p>
             </div>
         </footer>
 
-        <div class="fixed bottom-6 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 z-50 bg-white/90 backdrop-blur-sm border border-gray-200 shadow-lg rounded-full px-4 py-2 md:px-6 md:py-3 text-gray-800 text-xs md:text-sm font-medium hover:shadow-xl transition-all duration-300 flex items-center gap-2 animate-in slide-in-from-bottom-4 fade-in whitespace-nowrap">
+        <div class="fixed bottom-6 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 z-50 bg-white/90 dark:bg-[#1F1F21]/90 backdrop-blur-sm border border-gray-200 dark:border-[#FE3203] shadow-lg rounded-full px-4 py-2 md:px-6 md:py-3 text-[#1F1F21] dark:text-[#FE3203] text-xs md:text-sm font-medium hover:shadow-xl transition-all duration-300 flex items-center gap-2 animate-in slide-in-from-bottom-4 fade-in whitespace-nowrap">
             <span>Made with ❤️ by Students and AI Enthusiasts</span>
         </div>
 	</body>

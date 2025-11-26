@@ -13,14 +13,14 @@ import '../styles/global.css';
 		<meta name="generator" content={Astro.generator} />
 		<title>AIVault - AI Component Directory</title>
 	</head>
-	<body class="bg-gray-50 min-h-screen flex flex-col">
+	<body class="bg-white dark:bg-[#1F1F21] min-h-screen flex flex-col transition-colors duration-300">
 		<Navbar />
 		<main class="container mx-auto py-12 px-4 flex-grow">
 			<header class="text-center mb-12">
-				<h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+				<h1 class="text-3xl md:text-4xl font-extrabold text-[#1F1F21] dark:text-[#FE3203] mb-4">
 					AIVault Directory
 				</h1>
-				<p class="text-lg md:text-xl text-gray-600">
+				<p class="text-lg md:text-xl text-gray-600 dark:text-white">
 					Discover and reuse high-quality AI components. Built by students for everyone.
 				</p>
 			</header>
@@ -28,13 +28,13 @@ import '../styles/global.css';
 			<ComponentSearch client:load components={components} />
 		</main>
 		
-		<footer class="bg-white border-t border-gray-100 py-8 mt-12">
-            <div class="container mx-auto px-4 text-center text-gray-400 text-sm">
+		<footer class="bg-white dark:bg-[#1F1F21] border-t border-gray-100 dark:border-[#FE3203] py-8 mt-12 transition-colors duration-300">
+            <div class="container mx-auto px-4 text-center text-gray-400 dark:text-white text-sm">
                 <p>&copy; {new Date().getFullYear()} AIVault. All rights reserved.</p>
             </div>
         </footer>
 
-        <div class="fixed bottom-6 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 z-50 bg-white/90 backdrop-blur-sm border border-gray-200 shadow-lg rounded-full px-4 py-2 md:px-6 md:py-3 text-gray-800 text-xs md:text-sm font-medium hover:shadow-xl transition-all duration-300 flex items-center gap-2 animate-in slide-in-from-bottom-4 fade-in whitespace-nowrap">
+        <div class="fixed bottom-6 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 z-50 bg-white/90 dark:bg-[#1F1F21]/90 backdrop-blur-sm border border-gray-200 dark:border-[#FE3203] shadow-lg rounded-full px-4 py-2 md:px-6 md:py-3 text-[#1F1F21] dark:text-[#FE3203] text-xs md:text-sm font-medium hover:shadow-xl transition-all duration-300 flex items-center gap-2 animate-in slide-in-from-bottom-4 fade-in whitespace-nowrap">
             <span>Made with ❤️ by Students and AI Enthusiasts</span>
         </div>
 	</body>

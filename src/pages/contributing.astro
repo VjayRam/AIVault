@@ -11,20 +11,20 @@ import '../styles/global.css';
 		<meta name="generator" content={Astro.generator} />
 		<title>Contributing - AIVault</title>
 	</head>
-	<body class="bg-gray-50 min-h-screen flex flex-col">
+	<body class="bg-white dark:bg-[#1F1F21] min-h-screen flex flex-col transition-colors duration-300">
         <Navbar />
 		<main class="container mx-auto py-12 px-4 max-w-3xl flex-grow pb-32">
 			<header class="mb-12 text-center">
-                <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Contributing to AIVault</h1>
-                <p class="text-lg md:text-xl text-gray-600">Help us build the best resource for reusable AI components</p>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-[#1F1F21] dark:text-[#FE3203] mb-4">Contributing to AIVault</h1>
+                <p class="text-lg md:text-xl text-gray-600 dark:text-white">Help us build the best resource for reusable AI components</p>
             </header>
             
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 prose prose-blue max-w-none">
+            <div class="bg-white dark:bg-[#1F1F21] p-8 rounded-xl shadow-sm border border-gray-100 dark:border-[#FE3203] prose prose-blue dark:prose-invert max-w-none text-[#1F1F21] dark:text-white">
                 <p class="lead">
                     Thank you for your interest in contributing to AIVault! We welcome contributions of all kinds, from adding new AI components to improving the website's code.
                 </p>
 
-                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">🧩 Adding a New Component</h2>
+                <h2 class="text-2xl font-bold text-[#1F1F21] dark:text-[#FE3203] mt-8 mb-4">🧩 Adding a New Component</h2>
                 <p>The core of AIVault is its library of reusable AI components. Adding a new one is easy:</p>
                 <ol class="list-decimal pl-6 space-y-2">
                     <li><strong>Fork the Repository</strong>: Create your own fork of the project.</li>
@@ -32,7 +32,7 @@ import '../styles/global.css';
                     <li><strong>Add Your Code</strong>: Place your component's source code, documentation, and examples in this folder.</li>
                     <li>
                         <strong>Add Metadata</strong>: <strong>Crucial Step!</strong> You must create a <code>metadata.json</code> file in your component's root folder. This file tells the website how to display your component.
-                        <div class="bg-gray-50 p-4 rounded-lg mt-2 border border-gray-200 font-mono text-sm overflow-x-auto">
+                        <div class="bg-gray-50 dark:bg-[#2A2A2D] p-4 rounded-lg mt-2 border border-gray-200 dark:border-[#FE3203] font-mono text-sm overflow-x-auto text-[#1F1F21] dark:text-white">
 <pre>{`{
   "name": "My New Agent",
   "description": "A brief description of what this component does.",
@@ -41,21 +41,21 @@ import '../styles/global.css';
   "version": "1.0.0"
 }`}</pre>
                         </div>
-                        <p class="text-sm text-gray-500 mt-2 italic">Note: A unique <code>comp_id</code> will be automatically assigned to your component when it is processed by our build system.</p>
+                        <p class="text-sm text-gray-500 dark:text-white/80 mt-2 italic">Note: A unique <code>comp_id</code> will be automatically assigned to your component when it is processed by our build system.</p>
                     </li>
                     <li>
                         <strong>Commit Your Changes</strong>: We follow a strict commit message convention to automate versioning.
                         <ul class="list-disc pl-6 mt-2 space-y-1">
                             <li>
                                 <strong>For Component Updates</strong>: Start your commit message with the component ID.
-                                <ul class="list-disc pl-6 mt-1 text-sm text-gray-600">
+                                <ul class="list-disc pl-6 mt-1 text-sm text-gray-600 dark:text-white">
                                     <li><code>comp_xxxxx: feat: added new capability</code> (Triggers Minor version bump)</li>
                                     <li><code>comp_xxxxx: fix: resolved parsing error</code> (Triggers Patch version bump)</li>
                                 </ul>
                             </li>
                             <li>
                                 <strong>For Website/UI Updates</strong>: Use standard conventional commits.
-                                <ul class="list-disc pl-6 mt-1 text-sm text-gray-600">
+                                <ul class="list-disc pl-6 mt-1 text-sm text-gray-600 dark:text-white">
                                     <li><code>feat: added dark mode</code></li>
                                     <li><code>fix: corrected navbar alignment</code></li>
                                 </ul>
@@ -64,7 +64,7 @@ import '../styles/global.css';
                     </li>
                     <li>
                         <strong>Add Yourself to Contributors</strong>: Open <code>CONTRIBUTORS.md</code> and add a new object to the JSON array:
-                        <div class="bg-gray-50 p-4 rounded-lg mt-2 border border-gray-200 font-mono text-sm overflow-x-auto">
+                        <div class="bg-gray-50 dark:bg-[#2A2A2D] p-4 rounded-lg mt-2 border border-gray-200 dark:border-[#FE3203] font-mono text-sm overflow-x-auto text-[#1F1F21] dark:text-white">
 <pre>{`{
   "name": "Your Name",
   "role": "Contributor",
@@ -77,42 +77,42 @@ import '../styles/global.css';
                     <li><strong>Submit a Pull Request</strong>: Push your changes and open a PR to the <code>main</code> branch.</li>
                 </ol>
 
-                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">💻 Improving the Website</h2>
+                <h2 class="text-2xl font-bold text-[#1F1F21] dark:text-[#FE3203] mt-8 mb-4">💻 Improving the Website</h2>
                 <p>If you want to work on the frontend (Astro/React):</p>
                 <ol class="list-decimal pl-6 space-y-2">
                     <li>
                         <strong>Install Dependencies</strong>:
-                        <code class="bg-gray-100 px-2 py-1 rounded text-sm">npm install</code>
+                        <code class="bg-gray-100 dark:bg-[#2A2A2D] px-2 py-1 rounded text-sm text-[#1F1F21] dark:text-white">npm install</code>
                     </li>
                     <li>
                         <strong>Run Development Server</strong>:
-                        <code class="bg-gray-100 px-2 py-1 rounded text-sm">npm run dev</code>
+                        <code class="bg-gray-100 dark:bg-[#2A2A2D] px-2 py-1 rounded text-sm text-[#1F1F21] dark:text-white">npm run dev</code>
                         <br/>
                         This will start the server at <code>http://localhost:4321</code>.
                     </li>
                     <li><strong>Make Changes</strong>: The source code is in the <code>src/</code> directory.</li>
-                    <li><strong>Test</strong>: Ensure the site builds correctly with <code class="bg-gray-100 px-2 py-1 rounded text-sm">npm run build</code>.</li>
+                    <li><strong>Test</strong>: Ensure the site builds correctly with <code class="bg-gray-100 dark:bg-[#2A2A2D] px-2 py-1 rounded text-sm text-[#1F1F21] dark:text-white">npm run build</code>.</li>
                 </ol>
 
-                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">🐞 Reporting Issues</h2>
+                <h2 class="text-2xl font-bold text-[#1F1F21] dark:text-[#FE3203] mt-8 mb-4">🐞 Reporting Issues</h2>
                 <p>If you find a bug or have a feature request, please open an issue on GitHub.</p>
                 
-                <div class="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-100 text-center">
-                    <p class="text-blue-800 font-medium mb-2">Ready to contribute?</p>
-                    <a href="https://github.com/VjayRam/AIVault/" target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 transition-colors">
+                <div class="mt-8 p-4 bg-orange-100 dark:bg-[#2A2A2D] rounded-lg border border-orange-300 dark:border-[#FE3203] text-center">
+                    <p class="text-[#FE3203] dark:text-white font-medium mb-2">Ready to contribute?</p>
+                    <a href="https://github.com/VjayRam/AIVault/" target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 bg-[#FE3203] text-white font-bold rounded-full hover:bg-[#D92B02] transition-colors">
                         Go to GitHub Repository
                     </a>
                 </div>
             </div>
 		</main>
         
-        <footer class="bg-white border-t border-gray-100 py-8 mt-12">
-            <div class="container mx-auto px-4 text-center text-gray-400 text-sm">
+        <footer class="bg-white dark:bg-[#1F1F21] border-t border-gray-100 dark:border-[#FE3203] py-8 mt-12 transition-colors duration-300">
+            <div class="container mx-auto px-4 text-center text-gray-400 dark:text-white text-sm">
                 <p>&copy; {new Date().getFullYear()} AIVault. All rights reserved.</p>
             </div>
         </footer>
 
-        <div class="fixed bottom-6 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 z-50 bg-white/90 backdrop-blur-sm border border-gray-200 shadow-lg rounded-full px-6 py-3 text-gray-800 text-sm font-medium hover:shadow-xl transition-all duration-300 flex items-center gap-2 animate-in slide-in-from-bottom-4 fade-in whitespace-nowrap">
+        <div class="fixed bottom-6 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 z-50 bg-white/90 dark:bg-[#1F1F21]/90 backdrop-blur-sm border border-gray-200 dark:border-[#FE3203] shadow-lg rounded-full px-4 py-2 md:px-6 md:py-3 text-[#1F1F21] dark:text-[#FE3203] text-xs md:text-sm font-medium hover:shadow-xl transition-all duration-300 flex items-center gap-2 animate-in slide-in-from-bottom-4 fade-in whitespace-nowrap">
             <span>Made with ❤️ by Students and AI Enthusiasts</span>
         </div>
 	</body>

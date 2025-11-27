@@ -12,6 +12,81 @@ const OUTPUT_FILE = path.join(__dirname, '../src/data/components.json');
 // TODO: Replace with your actual GitHub repository URL
 const GITHUB_REPO_URL = 'https://github.com/VjayRam/AIVault/tree/main/components_repo'; 
 
+/**
+ * Updates the README.md file with the component ID badge if it exists.
+ * Adds badges after the title if missing, or updates existing badges.
+ */
+function updateReadmeWithCompId(componentDir, compId, version) {
+  const readmePath = path.join(componentDir, 'README.md');
+  
+  if (!fs.existsSync(readmePath)) {
+    return; // No README to update
+  }
+  
+  let content = fs.readFileSync(readmePath, 'utf-8');
+  
+  // Escape underscores for badge URL (comp_id -> comp__id)
+  const escapedCompId = compId.replace(/_/g, '__');
+  const compIdBadge = `![Component ID](https://img.shields.io/badge/Component%20ID-${escapedCompId}-blue)`;
+  const versionBadge = `![Version](https://img.shields.io/badge/Version-${version}-green)`;
+  
+  // Check if badges already exist
+  const hasCompIdBadge = content.includes('![Component ID]');
+  const hasVersionBadge = content.includes('![Version]');
+  
+  if (hasCompIdBadge) {
+    // Update existing Component ID badge
+    content = content.replace(
+      /!\[Component ID\]\([^)]+\)/,
+      compIdBadge
+    );
+  }
+  
+  if (hasVersionBadge) {
+    // Update existing Version badge
+    content = content.replace(
+      /!\[Version\]\([^)]+\)/,
+      versionBadge
+    );
+  }
+  
+  // If no badges exist, add them after the first heading
+  if (!hasCompIdBadge && !hasVersionBadge) {
+    // Find the first markdown heading (# Title)
+    const headingMatch = content.match(/^#\s+.+$/m);
+    if (headingMatch) {
+      const headingEnd = content.indexOf(headingMatch[0]) + headingMatch[0].length;
+      const before = content.slice(0, headingEnd);
+      const after = content.slice(headingEnd);
+      content = `${before}\n\n${compIdBadge}\n${versionBadge}${after}`;
+    }
+  } else if (!hasCompIdBadge) {
+    // Add Component ID badge before Version badge
+    content = content.replace(
+      /!\[Version\]/,
+      `${compIdBadge}\n![Version]`
+    );
+  } else if (!hasVersionBadge) {
+    // Add Version badge after Component ID badge
+    content = content.replace(
+      /!\[Component ID\]\([^)]+\)/,
+      `${compIdBadge}\n${versionBadge}`
+    );
+  }
+  
+  // Also update the Metadata section at the bottom if it exists
+  const metadataCompIdPattern = /- \*\*Component ID\*\*:\s*`[^`]+`/;
+  if (metadataCompIdPattern.test(content)) {
+    content = content.replace(
+      metadataCompIdPattern,
+      `- **Component ID**: \`${compId}\``
+    );
+  }
+  
+  fs.writeFileSync(readmePath, content);
+  console.log(`Updated README.md with comp_id for ${path.basename(componentDir)}`);
+}
+
 function getFiles(dir) {
   const subdirs = fs.readdirSync(dir);
   const files = subdirs.map((subdir) => {
@@ -48,6 +123,9 @@ function generateIndex() {
         if (modified) {
             fs.writeFileSync(file, JSON.stringify(metadata, null, 2));
             console.log(`Assigned comp_id to ${path.basename(path.dirname(file))}`);
+            
+            // Update README.md with the new component ID if it exists
+            updateReadmeWithCompId(path.dirname(file), metadata.comp_id, metadata.version || 'v1.0.0');
         }
         
         // Calculate relative path from REPO_ROOT

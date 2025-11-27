@@ -1,0 +1,15 @@
+{
+  "name": "DSPy Prompt Optimizer",
+  "description": "A simple automatic prompt optimizer for better reasoning using DSPy and Google Gemini API",
+  "tags": [
+    "DSPy",
+    "prompt-engineering",
+    "LLM",
+    "optimization",
+    "Gemini",
+    "MIPROv2"
+  ],
+  "author": "Vijay Ram Enaganti",
+  "version": "v1.0.0",
+  "comp_id": "comp_f1861"
+}

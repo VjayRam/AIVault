@@ -16,6 +16,24 @@
     "lastUpdated": "2025-11-25"
   },
   {
+    "name": "DSPy Prompt Optimizer",
+    "description": "A simple automatic prompt optimizer for better reasoning using DSPy and Google Gemini API",
+    "tags": [
+      "DSPy",
+      "prompt-engineering",
+      "LLM",
+      "optimization",
+      "Gemini",
+      "MIPROv2"
+    ],
+    "author": "Vijay Ram Enaganti",
+    "version": "v1.0.0",
+    "comp_id": "comp_f1861",
+    "path": "dspy-prompt-optimizer",
+    "url": "https://github.com/VjayRam/AIVault/tree/main/components_repo/dspy-prompt-optimizer",
+    "lastUpdated": ""
+  },
+  {
     "name": "Pytorch CUDA GPU Setup Scripts",
     "description": "Scripts to set up Pytorch with CUDA support on GPU-enabled systems",
     "tags": [

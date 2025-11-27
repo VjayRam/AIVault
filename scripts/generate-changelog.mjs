@@ -46,17 +46,18 @@ try {
 
             files.forEach(file => {
                 // Check if file is in components_repo
-                // We expect file paths like: components_repo/category/component-name/file.ext
+                // We expect file paths like: components_repo/component-name/file.ext
                 const normalizedFile = file.replace(/\\/g, '/');
                 if (normalizedFile.includes('components_repo/')) {
                     const parts = normalizedFile.split('/');
                     const repoIndex = parts.indexOf('components_repo');
-                    if (repoIndex !== -1 && parts.length > repoIndex + 2) {
-                        // components_repo/category/component-name/...
-                        const category = parts[repoIndex + 1];
-                        const name = parts[repoIndex + 2];
-                        const componentPath = `${category}/${name}`;
-                        affectedComponents.add(componentPath);
+                    if (repoIndex !== -1 && parts.length > repoIndex + 1) {
+                        // components_repo/component-name/...
+                        const componentName = parts[repoIndex + 1];
+                        // Skip if it's a file directly in components_repo (not in a subfolder)
+                        if (parts.length > repoIndex + 2) {
+                            affectedComponents.add(componentName);
+                        }
                     }
                 }
             });
@@ -65,7 +66,7 @@ try {
                 const info = componentsMap.get(compPath);
                 return {
                     path: compPath,
-                    name: info ? info.name : compPath.split('/').pop(), // Fallback to folder name
+                    name: info ? info.name : compPath, // Fallback to folder name
                     version: info ? info.version : null,
                     componentAuthor: info ? info.author : null
                 };

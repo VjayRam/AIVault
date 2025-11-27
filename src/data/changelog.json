@@ -1,15 +1,29 @@
 [
   {
+    "hash": "c44bd6fe1e353b74f3d3ff7aed6f2cde080211db",
+    "author": "VjayRam",
+    "date": "2025-11-26",
+    "message": "comp_f1861: feat - Add DSPy Prompt Optimizer module with usage tracking and optimization features",
+    "components": [
+      {
+        "path": "dspy-prompt-optimizer",
+        "name": "DSPy Prompt Optimizer",
+        "version": "v1.0.0",
+        "componentAuthor": "Vijay Ram Enaganti"
+      }
+    ]
+  },
+  {
     "hash": "a7a5c2f6b0ce20c9632b08afa6c244fd0c270b34",
     "author": "VjayRam",
     "date": "2025-11-25",
     "message": "comp_ecc50: Tag update",
     "components": [
       {
-        "path": "docling-doc-parser/metadata.json",
-        "name": "metadata.json",
-        "version": null,
-        "componentAuthor": null
+        "path": "docling-doc-parser",
+        "name": "Docling Document Parser",
+        "version": "v1.0.0",
+        "componentAuthor": "Vijay Ram Enaganti"
       }
     ]
   },
@@ -20,22 +34,10 @@
     "message": "comp_7e6fc: add Pytorch CUDA GPU setup component with README, metadata, and setup notebook",
     "components": [
       {
-        "path": "pytorch-cuda-gpu-setup/README.md",
-        "name": "README.md",
-        "version": null,
-        "componentAuthor": null
-      },
-      {
-        "path": "pytorch-cuda-gpu-setup/metadata.json",
-        "name": "metadata.json",
-        "version": null,
-        "componentAuthor": null
-      },
-      {
-        "path": "pytorch-cuda-gpu-setup/setup.ipynb",
-        "name": "setup.ipynb",
-        "version": null,
-        "componentAuthor": null
+        "path": "pytorch-cuda-gpu-setup",
+        "name": "Pytorch CUDA GPU Setup Scripts",
+        "version": "v1.0.0",
+        "componentAuthor": "Vijay Ram Enaganti"
       }
     ]
   },
@@ -46,10 +48,10 @@
     "message": "feat: add README for Docling Document Parser with usage examples and metadata",
     "components": [
       {
-        "path": "docling-doc-parser/README.md",
-        "name": "README.md",
-        "version": null,
-        "componentAuthor": null
+        "path": "docling-doc-parser",
+        "name": "Docling Document Parser",
+        "version": "v1.0.0",
+        "componentAuthor": "Vijay Ram Enaganti"
       }
     ]
   },
@@ -60,10 +62,10 @@
     "message": "feat: enhance contributing guidelines and metadata handling, assign unique comp_id automatically",
     "components": [
       {
-        "path": "docling-doc-parser/metadata.json",
-        "name": "metadata.json",
-        "version": null,
-        "componentAuthor": null
+        "path": "docling-doc-parser",
+        "name": "Docling Document Parser",
+        "version": "v1.0.0",
+        "componentAuthor": "Vijay Ram Enaganti"
       }
     ]
   },
@@ -74,40 +76,10 @@
     "message": "add-comp: Added necessary files for docling document parser with example files and example output",
     "components": [
       {
-        "path": "docling-doc-parser/ReqView-SRS.pdf",
-        "name": "ReqView-SRS.pdf",
-        "version": null,
-        "componentAuthor": null
-      },
-      {
-        "path": "docling-doc-parser/docling.ipynb",
-        "name": "docling.ipynb",
-        "version": null,
-        "componentAuthor": null
-      },
-      {
-        "path": "docling-doc-parser/document.md",
-        "name": "document.md",
-        "version": null,
-        "componentAuthor": null
-      },
-      {
-        "path": "docling-doc-parser/metadata.json",
-        "name": "metadata.json",
-        "version": null,
-        "componentAuthor": null
-      },
-      {
-        "path": "docling-doc-parser/requirements.txt",
-        "name": "requirements.txt",
-        "version": null,
-        "componentAuthor": null
-      },
-      {
-        "path": "docling-doc-parser/srs_example.pdf",
-        "name": "srs_example.pdf",
-        "version": null,
-        "componentAuthor": null
+        "path": "docling-doc-parser",
+        "name": "Docling Document Parser",
+        "version": "v1.0.0",
+        "componentAuthor": "Vijay Ram Enaganti"
       }
     ]
   },
@@ -118,8 +90,8 @@
     "message": "feat: update component name to 'Docling Document Parser Component'",
     "components": [
       {
-        "path": "docling-test/metadata.json",
-        "name": "metadata.json",
+        "path": "docling-test",
+        "name": "docling-test",
         "version": null,
         "componentAuthor": null
       }
@@ -132,20 +104,20 @@
     "message": "feat: update metadata for Docling Test Component, remove React Agent and Multimodal RAG components",
     "components": [
       {
-        "path": "docling-test/metadata.json",
-        "name": "metadata.json",
+        "path": "docling-test",
+        "name": "docling-test",
         "version": null,
         "componentAuthor": null
       },
       {
-        "path": "llm-agents/react-agent",
-        "name": "react-agent",
+        "path": "llm-agents",
+        "name": "llm-agents",
         "version": null,
         "componentAuthor": null
       },
       {
-        "path": "rag-systems/multimodal-rag",
-        "name": "multimodal-rag",
+        "path": "rag-systems",
+        "name": "rag-systems",
         "version": null,
         "componentAuthor": null
       }
@@ -158,8 +130,8 @@
     "message": "feat: enhance component search functionality and improve project setup",
     "components": [
       {
-        "path": "docling-test/metadata.json",
-        "name": "metadata.json",
+        "path": "docling-test",
+        "name": "docling-test",
         "version": null,
         "componentAuthor": null
       }
@@ -172,14 +144,14 @@
     "message": "feat: add component search functionality and index generation",
     "components": [
       {
-        "path": "llm-agents/react-agent",
-        "name": "react-agent",
+        "path": "llm-agents",
+        "name": "llm-agents",
         "version": null,
         "componentAuthor": null
       },
       {
-        "path": "rag-systems/multimodal-rag",
-        "name": "multimodal-rag",
+        "path": "rag-systems",
+        "name": "rag-systems",
         "version": null,
         "componentAuthor": null
       }

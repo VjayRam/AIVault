@@ -1,0 +1,14 @@
+{
+  "name": "LLM-as-a-Judge Prompt Evaluations",
+  "description": "A flexible evaluation framework that uses Large Language Models as judges to assess System Prompts and AI-generated responses",
+  "tags": [
+    "LLM",
+    "evaluation",
+    "AI-judge",
+    "metrics",
+    "benchmarking"
+  ],
+  "author": "Vijay Ram Enaganti",
+  "version": "v1.0.0",
+  "comp_id": "comp_c642a"
+}

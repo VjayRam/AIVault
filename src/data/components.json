@@ -31,6 +31,23 @@
     "comp_id": "comp_f1861",
     "path": "dspy-prompt-optimizer",
     "url": "https://github.com/VjayRam/AIVault/tree/main/components_repo/dspy-prompt-optimizer",
+    "lastUpdated": "2025-11-26"
+  },
+  {
+    "name": "LLM-as-a-Judge Prompt Evaluations",
+    "description": "A flexible evaluation framework that uses Large Language Models as judges to assess System Prompts and AI-generated responses",
+    "tags": [
+      "LLM",
+      "evaluation",
+      "AI-judge",
+      "metrics",
+      "benchmarking"
+    ],
+    "author": "Vijay Ram Enaganti",
+    "version": "v1.0.0",
+    "comp_id": "comp_c642a",
+    "path": "llm-as-a-judge-evals",
+    "url": "https://github.com/VjayRam/AIVault/tree/main/components_repo/llm-as-a-judge-evals",
     "lastUpdated": ""
   },
   {
